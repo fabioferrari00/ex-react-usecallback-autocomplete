@@ -1,0 +1,11 @@
+.dropdown {
+  background-color: hsl(0, 0%, 90%);
+  max-height: 30vh;
+  overflow: auto;
+  margin-top: 1em;
+}
+
+.dropdown>p {
+  padding: 1em;
+  margin: 0;
+}

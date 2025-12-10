@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 
 const debounce = (callback, delay) => {
   let timeout;
@@ -31,8 +31,10 @@ function App() {
     }
   }
 
+  const debouncedProducts = useCallback(debounce(fetchProducts, 1000), [])
+
   useEffect(() => {
-    fetchProducts(query)
+    debouncedProducts(query)
   }, [query])
 
   return (

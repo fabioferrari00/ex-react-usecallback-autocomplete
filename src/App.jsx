@@ -1,5 +1,14 @@
 import { useEffect, useState } from "react"
 
+const debounce = (callback, delay) => {
+  let timeout;
+  return (value) => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      callback(value)
+    }, delay)
+  }
+}
 
 function App() {
 
@@ -16,6 +25,7 @@ function App() {
       const res = await fetch(`http://localhost:3333/products?search=${query}`)
       const data = await res.json();
       setHint(data)
+      console.log(data)
     } catch (err) {
       console.error(err)
     }

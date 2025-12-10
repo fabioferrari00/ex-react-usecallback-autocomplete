@@ -1,14 +1,5 @@
 import { useCallback, useEffect, useState } from "react"
-
-const debounce = (callback, delay) => {
-  let timeout;
-  return (value) => {
-    clearTimeout(timeout);
-    timeout = setTimeout(() => {
-      callback(value)
-    }, delay)
-  }
-}
+import { debounce } from "lodash";
 
 function App() {
 
